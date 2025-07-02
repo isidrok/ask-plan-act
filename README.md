@@ -3,6 +3,9 @@
 A systematic approach to collaborating with AI coding agents using persistent memory, TDD,
 and structured workflows to produce quality software.
 
+This methodology is detailed in the blog post: [AI Coding Methodology: Ask, Plan,
+Act](https://isidrok.github.io/posts/ai-coding-methodology)
+
 ## Overview
 
 This repository contains the methodology and prompts for effective AI-assisted software
@@ -72,8 +75,3 @@ The methodology was used to build the [KB Sport App](https://github.com/isidrok/
 
 For simple tasks, treat AI agents as pair programming partners while applying the same
 principles of requirements clarification and code review.
-
-## Read more
-
-This methodology is detailed in the blog post: [AI Coding Methodology: Ask, Plan,
-Act](https://isidrok.github.io/posts/ai-coding-methodology)
