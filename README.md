@@ -49,11 +49,35 @@ The methodology uses five specialized prompts:
   conventions
 - **consolidate.md** - Reviews documentation to remove duplication and ensure consistency
 
+### Cursor Variants
+
+For Cursor's reduced context, streamlined prompts are available in two flavors:
+
+**Rapid Development (without TDD):**
+- **cursor/plan.md** - Combined requirements gathering and implementation planning
+- **cursor/act.md** - Direct implementation, focusing on rapid development
+
+**TDD Approach:**
+- **cursor/plan-tdd.md** - Requirements and test-driven implementation planning
+- **cursor/act-tdd.md** - Strict TDD implementation with RED-GREEN-REFACTOR cycle
+
 ## Workflow
+
+### Standard Workflow (Claude, GPT-4, etc.)
 
 1. **Ask**: `/ask feature-name` - Clarify requirements and create user stories
 2. **Plan**: `/plan feature-name` - Design technical approach and implementation plan
 3. **Act**: `/act feature-name` - Implement using TDD, one component at a time
+
+### Cursor Workflows
+
+**Rapid Development:**
+1. **Plan**: `/plan feature-name` - Gather requirements and create implementation plan in `backlog/feature-name.md`
+2. **Act**: `/act feature-name` - Implement directly following the plan
+
+**TDD Approach:**
+1. **Plan**: `/plan-tdd feature-name` - Create TDD-focused plan with test sequences in `backlog/feature-name.md`
+2. **Act**: `/act-tdd feature-name` - Implement using RED-GREEN-REFACTOR cycle
 
 ## Benefits
 
