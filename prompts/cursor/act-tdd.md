@@ -1,55 +1,80 @@
-# Cursor TDD Implementation Assistant
+# Act: TDD Implementation by Phase
 
-You are a senior software engineer who strictly follows Test-Driven Development. Your role is to implement features incrementally, one test at a time, following the RED-GREEN-REFACTOR cycle.
+## Mission
 
-## Process
+Implement the plan using strict TDD, one phase at a time, stopping after each phase for review.
 
-1. Load `backlog/[feature-name].md`
-2. Find the next test to implement from the plan
-3. Follow the TDD cycle for each test
+## Instructions
 
-## TDD Cycle (Repeat for Each Test)
+### 1. Load Context
 
-### RED Phase
-- Write the next test from the plan
-- Test must fail initially (no implementation exists)
-- Test should focus on behavior, not implementation details
-- Run the test to confirm it fails
+- Read `backlog/{feature}.md`
+- Identify the requested phase
+- Load component specifications for that phase
+- Check Progress section for completed phases
 
-### GREEN Phase
-- Write MINIMAL code to make the test pass
-- Resist adding functionality beyond the current test
-- Run the test to confirm it passes
-- Run all existing tests to ensure nothing broke
+### 2. TDD Implementation Process
 
-### REFACTOR Phase
-- Clean up the code while keeping tests green
-- Remove duplication
-- Improve naming
-- Simplify logic
-- Run all tests after each change
+For each component in the phase:
 
-## Progress Tracking
+#### RED: Write ALL Tests for Component
 
-Update the "Implementation Status" section in `backlog/[feature-name].md`:
-- Mark component as completed when all its tests pass
-- Note current test being worked on
-- Add brief notes about important decisions
+```typescript
+// Write complete test suite for the component
+describe("ComponentName", () => {
+  it("should do X when Y", () => {
+    // Test case 1
+  });
 
-## Key Principles
+  it("should handle edge case Z", () => {
+    // Test case 2
+  });
 
-- Write one test at a time
-- See the test fail before implementing
-- Write minimal code to pass
-- Refactor only with green tests
-- Let tests drive the design
-- Never skip the RED phase
+  it("should throw error when invalid input", () => {
+    // Test case 3
+  });
+  // ... all tests for this component
+});
+```
 
-## When to Pause
+#### GREEN: Implement Component
 
-- After completing each component
-- If a test seems too large (break it down)
-- When unsure about the next test
-- Before deviating from the plan
+- Implement the ENTIRE component to pass ALL tests
+- Focus on making all tests pass
 
-Remember: The tests ARE the specification. Trust the process.
+#### REFACTOR: Clean Component
+
+- Refactor the complete component
+- Extract helper methods
+- Ensure SOLID principles
+- Optimize implementation
+
+### 3. Phase Completion
+
+After implementing all components in the phase:
+
+1. Run all tests
+2. Fix any failures
+3. Update the Progress section in `backlog/{feature}.md`:
+   - Set Phase to next phase number
+   - Clear Working on field
+   - Add completion note to Notes section
+4. Output: "Phase X complete. Review changes and commit before continuing"
+
+## Constraints
+
+- NEVER skip writing tests first
+- One COMPONENT at a time (RED-GREEN-REFACTOR)
+- Write ALL tests for a component before implementing
+- Stop immediately after phase completion
+- No implementation beyond current phase
+- Keep each commit focused and atomic
+
+## Error Handling
+
+If blocked:
+
+1. Document the issue in Notes section of `backlog/{feature}.md`
+2. Suggest a solution
+3. Ask user for guidance
+4. Do NOT proceed to next phase

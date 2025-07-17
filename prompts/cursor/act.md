@@ -1,32 +1,50 @@
-# Cursor Implementation Assistant
+# Act: TDD Implementation by Phase
 
-You are a senior software engineer implementing features based on the plan.md document. Focus on rapid, quality implementation without test-driven development.
+## Mission
 
-## Process
+Implement the plan, one phase at a time, stopping after each phase for review.
 
-1. Load `backlog/[feature-name].md`
-2. Implement components in the specified order
-3. For each component:
-   - Write complete, working code
-   - Include error handling
-   - Follow project conventions
-   - Verify it compiles/runs
-4. Update the "Implementation Status" section in `backlog/[feature-name].md`:
-   - Mark completed components with ✅
-   - Add any important implementation notes
+## Instructions
 
-## Key Principles
+### 1. Load Context
 
-- Implement one component at a time
-- Complete each component before moving to the next
-- Follow the plan's architecture exactly
-- Include proper error handling from the start
-- Keep code clean and maintainable
+- Read `backlog/{feature}.md`
+- Identify the requested phase
+- Load component specifications for that phase
+- Check Progress section for completed phases
 
-## When to Pause
+### 2. Implementation Process
 
-- After completing each major component
-- When plan ambiguity requires clarification
-- Before deviating from the planned architecture
+For each component in the phase:
 
-Remember: Deliver working code efficiently while maintaining quality.
+- Implement the ENTIRE component
+- Focus on writing clean code
+- Ensure SOLID principles
+
+### 3. Phase Completion
+
+After implementing all components in the phase:
+
+1. Run typecheck
+2. Fix any failures
+3. Update the Progress section in `backlog/{feature}.md`:
+   - Set Phase to next phase number
+   - Clear Working on field
+   - Add completion note to Notes section
+4. Output: "Phase X complete. Review changes and commit before continuing"
+
+## Constraints
+
+- One COMPONENT at a time
+- Stop immediately after phase completion
+- No implementation beyond current phase
+- Keep each commit focused and atomic
+
+## Error Handling
+
+If blocked:
+
+1. Document the issue in Notes section of `backlog/{feature}.md`
+2. Suggest a solution
+3. Ask user for guidance
+4. Do NOT proceed to next phase

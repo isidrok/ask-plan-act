@@ -25,10 +25,8 @@ leveraging their code generation strengths.
 ```bash
 project/
 ├── backlog/
-│ └── feature/
-│   ├── requirements.md # User stories and acceptance criteria
-│   ├── plan.md # Implementation plan and technical breakdown
-│   └── progress.md # Ongoing notes, status, and decisions
+│ ├── template.md # Template for feature plans
+│ └── feature-name.md # Combined requirements, plan, progress, and notes
 ├── docs/ # Generated project knowledge
 ├── CLAUDE.md # Project-level AI agent rules and context
 └── src/
@@ -49,17 +47,12 @@ The methodology uses five specialized prompts:
   conventions
 - **consolidate.md** - Reviews documentation to remove duplication and ensure consistency
 
-### Cursor Variants
+### Cursor Workflow
 
-For Cursor's reduced context, streamlined prompts are available in two flavors:
+For Cursor's limited context (128k tokens) and request constraints (500/month), a streamlined two-command workflow:
 
-**Rapid Development (without TDD):**
-- **cursor/plan.md** - Combined requirements gathering and implementation planning
-- **cursor/act.md** - Direct implementation, focusing on rapid development
-
-**TDD Approach:**
-- **cursor/plan-tdd.md** - Requirements and test-driven implementation planning
-- **cursor/act-tdd.md** - Strict TDD implementation with RED-GREEN-REFACTOR cycle
+- **cursor/plan.md** - Efficiently gathers requirements and creates comprehensive implementation plan
+- **cursor/act.md** - TDD implementation by phase, one component at a time with mandatory stops
 
 ## Workflow
 
@@ -69,15 +62,12 @@ For Cursor's reduced context, streamlined prompts are available in two flavors:
 2. **Plan**: `/plan feature-name` - Design technical approach and implementation plan
 3. **Act**: `/act feature-name` - Implement using TDD, one component at a time
 
-### Cursor Workflows
+### Cursor Workflow
 
-**Rapid Development:**
 1. **Plan**: `/plan feature-name` - Gather requirements and create implementation plan in `backlog/feature-name.md`
-2. **Act**: `/act feature-name` - Implement directly following the plan
-
-**TDD Approach:**
-1. **Plan**: `/plan-tdd feature-name` - Create TDD-focused plan with test sequences in `backlog/feature-name.md`
-2. **Act**: `/act-tdd feature-name` - Implement using RED-GREEN-REFACTOR cycle
+2. **Review**: Manually review and adjust the generated plan
+3. **Act**: `/act feature-name phase-1` - Implement Phase 1 using TDD (one component at a time)
+4. **Iterate**: Review, commit, then `/act feature-name phase-2` for next phase
 
 ## Benefits
 
