@@ -4,7 +4,7 @@ A systematic approach to collaborating with AI coding agents using persistent me
 and structured workflows to produce quality software.
 
 This methodology is detailed in the blog post: [AI Coding Methodology: Ask, Plan,
-Act](https://isidrok.github.io/posts/ai-coding-methodology)
+Act](https://isidrok.github.io/blog/ai-coding-methodology/)
 
 ## Overview
 
